@@ -1,0 +1,36 @@
+Making pictures by hand easy, but:
+  - doesn't scale.
+  - data changes frequently
+  - different ppl want different things
+
+Graphviz
+  - Simple language to describe graphs
+  - Tulip is an alternative, handles bigger sets
+
+$ sudo gem install graph
+
+  digraph do
+    node("B").label "Hello"
+  end
+
+  digraph do
+    edge "A", "B"
+    save "example", "jpg"
+  end
+
+  digraph do
+    boxes
+    edge "A", "B"
+    edge "B", "C"
+  end
+
+  digraph do
+    node_attribs << red
+    edge_attribs << blue
+    edge "A", "B", "C"
+  end
+
+  - also supports: http://colorbrewer2.com
+  - clustering also cool
+    - apps on servers
+    - things in diff depts
