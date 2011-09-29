@@ -1,3 +1,5 @@
+=begin
+
 Hard work is the secret sauce.
 
 Overview of various Maze Algorithms
@@ -33,3 +35,5 @@ Moral: hard work!
   - Day jobs not enough resistance
   - What you do every day, is exactly that
   - Find time for homework!
+
+=end
