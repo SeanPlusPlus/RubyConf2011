@@ -1,0 +1,63 @@
+How confident are you in the code you write?
+  - if your code is going into production tonight, how soundly will you sleep?
+
+Book recs:
+  - Software Tools 76
+  - Object Oriented Software Construction 97
+    - Design by Contract: pre and post conditions of code
+  - Refactoring 99
+  - Extreme Programming Explained 00
+  * Writing Solid Code 93
+    - readable and digestible
+    - today's talk structured around chapters of the book
+
+1. Assert Yourself
+  - Add method 'ASSERT' and if your code gets there and something not true, it exits
+  - Consistency checks
+  - Do we need this in Ruby?
+  - Explicit type checks not necessary in Ruby
+  - But the PRINCIPLE is sound - Unit Testing!!!
+  - TDD / BDD !
+  - Integration Tests !
+  - Functional Tests !
+  - Mutation Tests !
+  - Fuzz Tests !
+  - Think of tests as specifications
+    - necessary: do the specs cover every behavior needed for this code
+    - sufficient: do the specs cover only the code in question
+  - Make the specs / test as readable as possible
+  - rspec-given library
+
+2. Fortify Your Subsystems
+  - From this:
+  def show
+    @stuff = Stuff.find(params[:id])
+  end
+  - To this:
+  def show
+    @stuff = current_user.stuff.find(params[:id])
+  end
+  - Be afraid of stuff outside your software
+    - user input
+    - database
+    - other software
+
+3. Step Through Your Code
+  - Pry library and/or Ruby Debugger
+  - Start using it, but not that often
+  - Know your code
+
+4. Candy Machine Interfaces
+  - At MS there was a candy machine
+    And engineer notices that it is an API where it's too easy to do wrong thing
+    i.e. enter price of candy instead of number associated with it
+  - In C:
+    getchar() // returns int and not char
+
+5. Risky Business
+  - show_me_where_errors_occur_in_program "project_name"
+  - McCabe Cyclomatic Complexity Metric
+    - number of paths (loops / if statements) in method
+
+* Fix the Cause not the Symptom
+* Your Code is Your Responsibility

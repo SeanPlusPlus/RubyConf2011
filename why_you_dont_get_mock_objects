@@ -1,0 +1,43 @@
+Adler, How to Read a Book p. 60
+  - "[The secondary Teacher] should regard himself ... with the best minds"
+
+Book Rec:
+  - Growing Object Oriented Software Guided By Tests, by Freeman and Pryce
+
+Mock Objects and Ruby
+  - Not great relation with Ruby (used with Java)
+  - Why not implemented in Ruby Community
+    - they duplicate implementation
+    - leads to brittle tests that do poor job
+
+Why Should We Use Them
+  - Mocks are Not stubs
+  - When you assert on state you are stubbing
+  - Objects Tell Objects To Do Things
+
+"The Big Idea is Messaging" - Alan Kay
+  - Don't worry about what is contained inside object,
+    worry about the messages it sends out
+  - To change behavior of system compose new objects
+  - Once an obj is complete, in order to modify its behavior, add new obj
+  * TELL DON'T ASK PRINCIPLE
+    - The object should be told things
+    - Hide internal state
+  - information hiding / black box
+  - treat our code base like libraries
+
+In OOP behavior is found in msgs
+  - Don't assert on state, assert on messages
+
+Key Mocking Rules
+  - Mocks Assert On Messages
+  - Mock Roles, Not Objects
+    - Wanting to mock concrete objects is design smell
+    - well designed objs don't know who they are talking to
+      because the 'who' can change
+    - When Mocking Roles, TDD Becomes A Design Process
+  - Only Mock Types You Own
+  - Mock Peers, Not Internals
+    - Decide what is inside and what is outside your obj
+  - Should it be mocked?
+    - Ask obj 'is this my role?' <- then no, should be internel
