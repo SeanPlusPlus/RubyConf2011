@@ -1,0 +1,77 @@
+Eben Moglen
+  - wrote lots of GPL 3
+  - using 'free' web service not really free
+  - gave talk about exploring alternatives
+    - inspired diaspora dudes
+    - to build distributed facebook
+
+Diaspora
+  - Distributed Social Networking Ecosystem
+  - Clusters of servers (pods)
+  - You can choose which pod you trust your data with
+  - Some pods sell, some don't
+  - If you are super paranoid, host your own data
+  - Essentially 'friending' cross server
+  - started with mongodb
+    - "social data isn't relational"
+    - oooh shiny
+
+Building on Mongodb
+  - probs at datalayer
+  - mapping layer
+  - mechanics of mongodb migration to sql store
+
+What is mongodb
+  - document oriented db
+  - stores data in big json blob (not tables)
+  - tv_shows have many seasons have many reviews (and) cast_members
+    - typical store ea box a table
+    - to get data need 5 table join
+    - mongo thinks of this as set of nest hashes
+    - sql == "row"
+    - mongo == "document"
+    - sets of sets of sets
+    - single query returns 'reviews' and 'cast_members'
+  - on diaspora, many queries to get home page, but stream most key
+  - users have many friends have many posts, etc (like tv_show model)
+  - except tv_shows are one way relation, users gets trickier
+
+"Social data isn't relational"
+  - actually means: "Eight table joins ZOMG"
+  - databases and caches are different things
+  - mongodb really about documents
+    - like literally something you can print out and hold
+    - self contained
+
+MongoMapper
+  - gives DataMapper like interface to mongo
+  - Faux relational interfaces (bad)
+  - JS map/reduce (good)
+    - but lower level
+    - difficult to test
+  - also not so much documentation for mongo
+  - harder to google for answer than sql
+  - smaller community
+  - this team was often first to run into bug
+  - Personal Thought Here: i kinda like these probs, blazing the trail!
+    But totally can understand how bleeding edge is tough place to live
+  - Big prob was that devs did not have lot of experience with mongo
+  - No issue deal breaker, but compounded
+
+Why The Switch To MySQL
+  - mongo slowed down velocity of project
+  - Every Non Standard Technology Choice Reduces Ability To Iterate Quickly
+
+Mechanics of a Migration
+  - Takes a long time
+  - Important to get it right
+  - Do lots of Tests!
+    - Test drive conversion of a single sub-doc from JSON to CSV
+    - Test import of CSV into ActiveRecord
+    - Run on copy of prod database
+    - Run more tests
+    - Could do massive infile insert - gnar
+  - Gotchas
+    - character encoding
+    - converting IDs
+    - github.com/diaspora
