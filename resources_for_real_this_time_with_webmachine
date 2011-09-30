@@ -1,0 +1,94 @@
+5 months ago ...
+  - Asks on Twitter "rack/wsgi is broken"
+  - Common answer "Aint broke if ppl make it work"
+
+Ruby and HTTP, selective history
+  - late 90's start with CGI
+    - web server would fork, set env vars and run app
+  - then we get WEBrick
+    - cool cause it is standalone server
+    - 'servlet' interface
+    - create class that inherits from servlet
+    - does HTTP method
+  - and then Rails!
+    - MVC means no mucking with lower level
+    - can now write routes to map to rendered templates
+  - then Rails 1.2 ZOMGREST
+    - easy APIs
+    - map URLs to models
+    - only 7 actions to remember
+  - then Sinatra
+    - rails too heavy
+    - let's go raw
+    - URLs + Methods = Actions
+
+Deeper Look Inside Rack
+  - Servers/Handlers
+    - bare HTTP transport
+    - can plug diff types of webservers
+  - Middleware
+    - change input into app
+    - modify response on way out
+  - Applications
+    - the beef
+  - Simple Inteface:
+    - Call
+      app.call
+  - Promises Composibility
+  - Simple Interface
+  - Separate Concerns
+  - Primary montra:
+    'If you like this, put middleware on it'
+
+Why Rack is Broken
+  - Blind up, Blind down
+  - environment has becomes dumpster
+  - communicate by convention, not contract
+  - middleware order matters
+  - high coupling
+
+What can we do to make this better?
+  - HTTP is hard
+    - is request method allow
+    - what media type to return
+    - response cacheable
+    - did resource move
+  - all tough to answer with RACK
+    - can app answer these Q's
+    - can middleware answer these Q's
+  - HTTP Doesn't Change! Only Your Resources Do!
+  - Encapsulate hard decisions and reuse them
+  - Let's shape our apps like HTTP
+  - A Resource is:
+    - Data or Service (file / piece of bytes / service)
+    - Identified by URI
+    - Representations (allow for multilingual apps)
+
+Introducing Webmachine
+  - Doing HTTP better
+  - Toolkit for easily creating weel behaved HTTP apps
+  - Not framework
+  - An executable model of HTTP
+  - Declare resources, don't perform actions
+  - Negotiate hard decisions transparently
+  - Respond with right status code
+  - USe sennsible default behavior
+  - No templating system / plugins / ORM / asset pipeline
+  - JUST resource server for writing web apps
+  - Well-defined interface to HTTP logic
+  - URIS map to resource families
+  - Simple Dispatching
+    - Break URI into segments
+    - Bind segments to symbols (like slash coloning stuff)
+    - Trailing wildcard on route available
+    - Route-specific 'static' bindings
+  - EXAMPLE
+    require 'webmachine'
+    class PageREsource < Webmachine::Resource
+      def to_html
+        '<html>.....</html>'
+      end
+    end
+
+Moral
+  - Constructing application in the shape of HTTP not MVC
