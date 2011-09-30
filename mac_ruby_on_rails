@@ -1,0 +1,30 @@
+The NaCl Way
+  - "First, I want You to be Happy"
+  - "Next, I want You to make your Family Happy"
+  - "Finally, if you have more happiness left, share it with the company"
+    - The President of NaCl
+
+MacRuby
+  - unique blend of Ruby 1.9 and Obj C
+  - Structure of Ruby 1.9:
+    - Application > Ruby 1.9 (LLVM, Std Libs) > Sys Libraries > OS (Linux, Win, Mac)
+  - Structure of MacRuby:
+    - Application > MacRuby (Auto Zone, Foundation, Std Libs) > Sys Libs > Mac OS X
+  - Current Status
+    - #860 MacRuby abborted if you use catch throw inside rescue clause
+    - and now Macruby only pops exception when necessary
+
+RoR on MacRuby
+  $ macruby --version
+  Macruby 0.11
+  $ rails --version
+  Rails 3.0.7
+  $ macruby -S rails new demo
+  $ cd demo
+  $ rails generate scaffold Bookmark title:string descritption:string url:string
+  $ rails server
+  - http://localhost:3000
+  - click 'About your app enviro' link # and it aborts
+
+Moral: MacRuby needs more Love!
+       Everyone please get on board.
