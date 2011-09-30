@@ -1,0 +1,35 @@
+Overview
+  - MRI
+  - Rubinius
+  - JRuby
+  - And:
+  class DeepThought
+    def ultimate_answer?(value)
+      value.to_s == '42'
+    end
+  end
+
+Speeding up searches for methods
+  - inline caches
+  - lookup caches
+
+Speeding up Execution
+  - reduce operations
+
+A Method gets called
+  - rb_call0
+
+Rubinius
+  - Module
+  - Method Table (hash)
+  - Bucket
+  - CompiledMEthod
+
+Look into this later SMS:
+  .decode
+  .opcodes
+  .literals
+
+Shit this talk is crazy technical, trying to stay afloat here
+
+github.com/rkh/presentations
