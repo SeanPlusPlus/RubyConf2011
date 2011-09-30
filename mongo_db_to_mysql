@@ -75,3 +75,5 @@ Mechanics of a Migration
     - character encoding
     - converting IDs
     - github.com/diaspora
+
+Moral: MongoDb is real good but not drop-in replacement for SQL
