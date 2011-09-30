@@ -1,0 +1,30 @@
+TDD
+  - Test
+  - Fix
+  - Refactor
+  - Repeat
+  - Challenges for CLI Apps
+    - tend to be implemented on production!
+    - can screw up machine where it is designed to run on
+    - with web you have dev server and prod server
+  - Demo
+    - Maintain our dotfiles
+    - git repo with .bashrc .vimrc etc
+    $ mkdir fullstop      #NO
+    $ bundle gem fullstop #MAYBE
+    $ methadone fullstop  #YES - his custom comamnd
+    - Set up Aruba and cucumber
+    - Cucumber steps for command line:
+      Feature: Install my dotfiles
+        In order to set up a new user account ...
+      Scenario: Symlink my dotfiles
+        ###
+    - Personal Note: check out cucumber
+    - This should variablize home dir to test elsewhere:
+    $ cd /Users/dave && git clone /tmp/dotfiles dotfile
+    - Testable units are good
+  - Conclusions
+    - Start with a template for command line apps (like methadone)
+    - Start from outside in (use cucumber)
+    - Once it gets complicated add unit tests
+    - Design for testability
