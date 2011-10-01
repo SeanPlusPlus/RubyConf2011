@@ -1,0 +1,45 @@
+This stuff is difficult!
+  - Many things to do to improve process though
+  - Talk today more about process than specific tool
+
+How they work at github
+  - asynchronously
+    - 'you can do shit without needing to pull me out of the zone'
+    - this can't be forced
+    - no meetings
+    - no deadlines: if it's done it's done
+    - ignore pings: don't expect response, constant disruptions pain!
+  - chat rooms: everything is logged
+  - time flexibility
+  - http://zachholman.com/talk/how-github-uses-github-to-build-github
+
+Pull Request + Branching
+  - master > deploy3 > deploy6
+  - often this model:
+    - a shop has trusted and shitty developpers
+    - trusted devs get master branch
+    - shitty devs get their own forks
+    - trusted devs have to check the shitty devs work in
+  * Keep Your Branch Simple
+  - How github does it
+    - Master > Your Own Branch > Repeat
+    - everyone can push and everyone can deploy
+    - frees up from micro mananging
+    - Master is Alway deployable
+    - good b/c they deploy 10-40 times a day
+    - let designers deploy
+  - Keep Your Branches Simple
+  - Pull Requests!
+    - Central part of asynchronous world
+    - this is code review!
+    - ACTUALLY: Master > Your Branch > Pull Request > Repeat
+    - Don't need to fork anything
+    - Can run tests on something other than master
+    - email is your interface
+    - dsigners can evolve mockups and entire workflows
+    - non-technical peeps get invovled
+    - historical
+    - can be experiments
+    - you can throw it away
+    - Mix Designers and Devs
+    - Post Screenshots
