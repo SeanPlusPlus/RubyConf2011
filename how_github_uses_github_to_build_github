@@ -43,3 +43,37 @@ Pull Request + Branching
     - you can throw it away
     - Mix Designers and Devs
     - Post Screenshots
+
+Issues
+  - the issue tracker: Title and Description
+  - can you work better on simple tools
+  - Merlin Mann email priorities
+    - if it were really important it would be already done
+    - ppl will do the important stuff if it needs to be done first
+  - resist meta work
+    - not actual work
+    - just assigning labels
+  - Categories:
+   - Shit is Broken
+   - Hey this would be Cool
+   - ToDo List
+
+oauth as identity
+  - Ruby is fast
+  - easy to build cool stuff for the heck of it
+  - github has crap ton of apps
+  - github as identification
+  - sinatra_auth_github
+
+hooks and hubot
+  - campfire robot
+  - has 275 commands
+  - can deploy, play music, build graphs, mustaches images posted in chat
+  - gets ppl involved
+  - built in node.js
+  - think about automating your own process
+  - ex: ask 'what hasn't been deployed' - bot can answer this
+  - ex: ask 'how many issues did we close out today' - answers this too
+
+Moral: can you refine your process to make things simpler?
+       constantly re-evaluate what you are doing wrong and how to improve.
