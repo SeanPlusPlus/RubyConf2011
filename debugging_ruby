@@ -1,0 +1,34 @@
+1.9 is the future, 1.8 is dead
+
+Profiling Tools
+  - ruby-prof
+  - perftools.rb
+  - memprof
+
+CPU Profiling
+  - what parts of your code take lots of time
+  - rb_add_event_hook(event_handler ...)
+
+Perftools.rb
+  - based on google perftools
+  - sampling profiler
+    - takes samples and gives you data based on that
+  - how to find bottlenecks in RoR app
+    $ be rails -s production
+    $ curl -o bar_rails.gic "localhost..."
+    - generates real slick looking graph
+  * Personal Note: look into this
+
+ruby-prof
+
+objspace
+  - count_object_size
+  - count_nodes
+  - count_tdata_objects
+
+memprof
+  - hooks into rb_newobl add_freelist
+  - traces that can be added to any C function call
+  - no new development tho
+  - dumps heap/stack JSON
+  - can run on 1.9 but need to hack
